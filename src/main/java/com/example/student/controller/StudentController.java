@@ -27,6 +27,19 @@ public class StudentController {
 		return list;
 	}
 	
+	@GetMapping("/students/allcourses")
+	public List<String> retrieveAllCoursesForStudent(@PathVariable String studentId) {
+		Course course = null;
+		
+		int id = course.getId();
+		
+		List<String> list = new ArrayList<>();
+		list.add("Maths");
+		list.add("Science");
+		list.add("English");
+		return list;
+	}
+	
 	@PostMapping("/students/{studentId}/courses")
 	public ResponseEntity<Void> registerStudentForCourse(
 			@PathVariable String studentId, @RequestBody Course newCourse) {
